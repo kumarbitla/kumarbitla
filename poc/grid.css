@@ -1,0 +1,48 @@
+div.row {
+    display: grid;
+    row-gap:10px;
+    grid-template-columns: repeat(12, 8.33%);
+    
+  }
+  
+  div[class^=col-] {
+  /*   border:1px solid #999; */
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  div[class^=col-] input {
+  width: 100%;
+    padding:5px 10px;
+    box-sizing: border-box;
+  }
+  
+  div.col-2{
+    grid-column: span 2;
+  }
+  div.col-3{
+    grid-column: span 3;
+  }
+
+
+  /*
+try with this html
+<div class="row">
+    <div class="col-1">Loremipsumd olordert yyyy</div>
+    <div class="col-2">Lorem ipsum dolor</div>
+    <div class="col-3">3</div>
+    <div class="col-4">4</div>
+    <div class="col-5">5</div>
+    <div class="col-6">
+        <input type="text">
+    </div>
+    <div class="col-7">
+        <input type="text">
+    </div>
+    <div class="col-8">8</div>
+    <div class="col-9">9</div>
+    <div class="col-10">10</div>
+    <div class="col-11">11</div>
+    <div class="col-12">12 dert de de d ed e </div>
+ </div>
+  */

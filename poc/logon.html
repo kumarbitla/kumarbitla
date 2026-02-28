@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("../images/pexels-tirachard-kumtanom-733857.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+        }
+
+        header {
+            background-color: rgb(0, 102, 204, 0.9);
+            height: 75px;
+            line-height: 75px;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 2em;
+            letter-spacing: 10px;
+            word-spacing: 30px;
+        }
+        div.container {
+            display:flex; 
+            height:calc(100% - 75px); 
+            width: 100%; 
+            position: absolute; 
+            align-items: center;
+            justify-content: center;
+        }
+        div.logon {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 350px;
+            padding: 40px 20px;
+            border: 1px solid rgba(0, 102, 204, 0.25);
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 10px 10px 50px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        div.logon input {
+            width: 100%;
+            padding: 5px 10px;
+            border: 1px solid rgb(0, 102, 204, 0.25);
+            border-radius: 3px;
+            transition: border 0.5s;
+            font-size: 1rem;
+        }
+
+        div.logon input:focus {
+            border: 1px solid rgb(0, 102, 204, 1);
+            outline: 0;
+        }
+
+        div.logon button {
+            background-color: rgb(0, 102, 204);
+            padding: 5px 10px;
+            border: 1px solid rgb(0, 102, 204, 0.25);
+            border-radius: 3px;
+            /* transition: border 0.5s; */
+            font-size: 1rem;
+            color:#fff;
+        }
+        
+        div.logon a {
+            color:  rgb(0, 102, 204);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        div.logon a:hover {
+            text-decoration: underline;
+        }
+        input::placeholder {
+            color: rgba(0, 102, 204,0.2);
+            /* font-size: 12px; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        will aide
+    </header>
+
+    <div class="container">
+        <div class="logon">
+            <input type="text" name="userid" id="userid" placeholder="user / logonid">
+            <input type="password" name="pwd" id="pwd" placeholder="password">
+            <button>login</button>
+            <div style="display: flex; justify-content:space-between">
+                <a href="">Privacy</a>
+                <a href="">Help</a>
+            </div>
+            <div style="font-family:'Courier New', Courier, monospace; font-size: 12px;">
+                remove this later. this is a single color theme. in this case blue. gives a unique look and can be easily chnage to a diffremt color theme as it involes a single colot to change.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

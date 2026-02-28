@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/WillAidePOC/.vs/WillAidePOC/v16
+/WillAidePOC/obj
+/WillAidePOC/bin/Debug/netcoreapp3.1
+/WillAidePOC/WillAidePOC.csproj.user

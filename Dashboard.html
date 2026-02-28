@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+<link rel="stylesheet" href="/WillAidePOC/styles/style.css">
+<style>
+
+
+
+</style>
+</head>
+<body>
+
+<div id="container">
+  <header id="header">
+    <div>
+      <img src="/images/wells-1.jpg">
+    </div>
+    
+    <!-- <div id="logo-title">logo and title</div> -->
+    <div id="login">login</div>
+  </header>
+  <div class="content">
+    <div id="contentHeading">
+      <h4>User Info</h4>     
+    </div>
+    <form id="formbody">
+    <div id="contentbody">
+     
+          <div class="inputcontrl" id="divControls">
+           
+           
+          </div>  
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+  </div>
+  <!-- <div class="help">help</div> -->
+  <footer id="footer">
+<div id="copyright">@copy</div>
+  </footer>
+</div>
+
+
+
+
+
+
+<script>
+  var users=[];  
+ 
+  (function(){
+        var http=new XMLHttpRequest();
+        http.open("get","https://localhost:44389/api/Home/GetUsers",true);
+        http.setRequestHeader('Accept', 'application/json');
+        http.send();
+        http.onreadystatechange=function(){
+                if(http.status="200" && http.readyState==http.DONE)
+                {
+                  users=http.responseText;                                  
+                  users=JSON.parse(users);                   
+                  InitializeTable(users);                   
+                }
+        }
+        
+        })();
+
+
+        function InitializeTable(userlist){  
+          
+          
+                var divControls=document.getElementById("divControls");
+                var labelCntrl='';
+                var textCntrl='';
+              
+               var jsonlist=userlist;
+               console.log(jsonlist.length);
+                for(i=0;i<jsonlist.length;i++)
+                {
+                    var userObj=userlist[i];
+                    var controlsList='';
+                    var j=2;
+                    console.log(userObj);
+                    Object.keys(userObj).forEach(function(key) 
+                    {
+                   
+                    labelCntrl=CreateLabel(key);
+                    textCntrl=CreateText(key,userObj[key]);
+                    if(j%2==0)
+                    {
+                      labelCntrl='</div><div class="inputcontrl">'+labelCntrl;                       
+                       
+                    }
+                    controlsList=controlsList+labelCntrl+textCntrl;                   
+                   
+                    j++;
+                    })
+                    
+                    divControls.innerHTML=controlsList;
+                   
+                }
+               
+        };
+
+        function CreateLabel(labelText)
+        { 
+          //<label for="txtId">First Name : </label>
+          var DisplayName=labelText.replaceAll('_',' ');
+          var label='';
+          label='<label for=txt'+labelText+'>'+DisplayName+' :  </label>';
+          return label;
+        }
+        function CreateText(labelText,TextValue)
+        { 
+          // <input type="text" id="txtId" required/>
+          var text='';         
+          text="<input type='text'  id=txt"+labelText+" value="+TextValue+" required </>";          
+          return text;
+        }
+</script>
+
+
+</body>
+</html>
