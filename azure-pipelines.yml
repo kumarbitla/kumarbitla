@@ -1,4 +1,11 @@
 # ASP.NET
+- task: AzureRmWebAppDeployment@5
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(3aebdd80-784e-4586-928b-b50ff7c16dd2)'
+    appType: 'webApp'
+    WebAppName: 'DigitalWillUI'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Build and test ASP.NET projects.
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
